@@ -9,5 +9,3 @@ print(raznost)
 
 proizvedenie = a * b
 print(proizvedenie)
-
-
