@@ -34,14 +34,14 @@ with mysql.connect(
         # print(f"{name} {second_name}, {group}, {book}, {subject}, {lesson}, {mark}")
 
         our_query = '''
-            SELECT name, second_name, groups.title, books.title, subjets.title, lessons.title, marks.value 
+            SELECT name, second_name, groups.title, books.title, subjets.title, lessons.title, marks.value
             FROM students
             JOIN `groups` ON students.group_id = groups.id
             JOIN books ON students.id = books.taken_by_student_id
             JOIN marks ON marks.student_id = students.id
             JOIN lessons ON marks.lesson_id = lessons.id
             JOIN subjets ON lessons.subject_id = subjets.id
-            WHERE name = %s and second_name = %s and groups.title = %s and books.title = %s 
+            WHERE name = %s and second_name = %s and groups.title = %s and books.title = %s
             and subjets.title = %s and lessons.title = %s and marks.value = %s;
         '''
 
