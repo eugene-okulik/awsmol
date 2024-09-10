@@ -19,7 +19,7 @@ def new_post():
 
 def clear(post_id):
     url = f'{base_url}/{post_id}'
-    response = requests.delete(url=url)
+    requests.delete(url=url)
 
 
 def get_list_of_all_objects():
@@ -93,7 +93,7 @@ def delete_object():
 
     response = requests.delete(url=url)
     assert response.status_code == 200, f"Status code is {response.status_code}"
-    assert response.json()["message"] == f"Object with id = {post_id} has been deleted.", f'Message is not correct'
+    assert response.json()["message"] == f"Object with id = {post_id} has been deleted.", 'Message is not correct'
 
 
 get_list_of_all_objects()
